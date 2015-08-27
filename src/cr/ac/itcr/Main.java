@@ -8,10 +8,9 @@ public class Main {
 	// write your code here h
 
         System.out.println();
-        for (int i = 0; i < ; i++) {
-            
+        for (int hhfnhtnbfh = 0; hhfnhtnbfh < 567576; hhfnhtnbfh++) {
+
         }
-                
         System.out.println(HOLA_MUNDO);
     }
 }
