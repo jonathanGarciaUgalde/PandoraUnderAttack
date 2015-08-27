@@ -9,7 +9,7 @@ public class Main {
 
         System.out.println();
         for (int hhfnhtnbfh = 0; hhfnhtnbfh < 567576; hhfnhtnbfh++) {
-            System.out.println("mae esa vara ya esta llisto");
+            System.out.println("mae esa vara ya esta  me lleva puta  llisto");
 
 
         }
