@@ -2,7 +2,7 @@ package cr.ac.itcr;
 
 public class Main {
 
-    public static final String HOLA_MUNDO = "Si si!!!!!";
+    public static final String HOLA_MUNDO = "Si si tal vez!!!!!";
 
     public static void main(String[] args) {
 	// write your code here h
