@@ -9,11 +9,11 @@ import java.io.ObjectOutputStream;
 
 public class Server {
 	
-	private ServerSocket server;  //socket del servidor
-	private Socket connection; //conexión con cliente
-	private int counter = 1; //contador del número de conexiones
-	private ObjectOutputStream output; //output stream al cliente
-	private ObjectInputStream input; //input stream del cliente
+	private ServerSocket server;  //variable de socket del servidor
+	private Socket connection; //variable de conexión con cliente
+	private int counter = 1; //variable de contador del número de conexiones
+	private ObjectOutputStream output; //variable del output stream al cliente
+	private ObjectInputStream input; //variable del input stream del cliente
 
 	//configuración y ejecución del servidor
 	public void runServer(){
