@@ -84,7 +84,7 @@ public class Server {
 	}
 	
 	//procesa la conexión con el cliente
-	public void processConnection() throws IOException{
+	private void processConnection() throws IOException{
 		
 		String message = "Connection successful"; 
 		sendData(message); //envía un mensaje de conexión exitosa al cliente
