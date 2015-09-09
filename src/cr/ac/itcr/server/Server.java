@@ -2,18 +2,18 @@ package cr.ac.itcr.server;
 
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.EOFException;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 
 public class Server {
 	
-	private ServerSocket server;  //variable de socket del servidor
-	private Socket connection; //variable de conexión con cliente
-	private int counter = 1; //variable de contador del número de conexiones
-	private ObjectOutputStream output; //variable del output stream al cliente
-	private ObjectInputStream input; //variable del input stream del cliente
+	private ServerSocket server;  //socket del servidor
+	private Socket connection; //conexión con cliente
+	private int counter = 1; //contador del número de conexiones
+	private DataOutputStream output; //output stream al cliente
+	private DataInputStream input; //input stream del cliente
 
 	//configuración y ejecución del servidor
 	public void runServer(){
@@ -31,6 +31,7 @@ public class Server {
 				while (true){ //lee los input streams que mandó el cliente
 					try{
 						readData();
+						sendData("Mensaje recibido");
 					}
 					//en caso de que no hayan mensajes ejecuta el catch
 					catch (IOException ioException){ 
@@ -73,32 +74,24 @@ public class Server {
 	private void getStreams() throws IOException{
 		
 		//configura un output stream para objetos
-		output = new ObjectOutputStream(connection.getOutputStream());
+		output = new DataOutputStream(connection.getOutputStream());
 		output.flush();
 		
 		//configura un intput stream para objetos
-		input = new ObjectInputStream(connection.getInputStream());
+		input = new DataInputStream(connection.getInputStream());
 		
 		
 		System.out.println("Got I/O streams");
 	}
 	
 	//procesa la conexión con el cliente
-	private void processConnection() throws IOException{
+	public void processConnection() throws IOException{
 		
 		String message = "Connection successful"; 
 		sendData(message); //envía un mensaje de conexión exitosa al cliente
 	
-		try{ //lee el mensaje de conexión que envió el cliente
-				
-			message = (String) input.readObject();
-			System.out.println(message);
-
-		}
-		catch (ClassNotFoundException classNotFoundException){
-			
-			System.out.println("Unknown object type received");
-		}
+		message = (String) input.readUTF();
+		System.out.println(message);
 	}
 	
 	//cierra las vías de comunicación y el socket, termina el servidor
@@ -123,7 +116,7 @@ public class Server {
 		
 		try{ //envía un objeto al cliente
 			
-			output.writeObject("Server >>>" + message);
+			output.writeUTF("Server >>>" + message);
 			output.flush();	//manda el objeto al cliente por el output stream
 		}
 		catch (IOException ioException){
@@ -135,15 +128,7 @@ public class Server {
 	//leer mensaje del cliente
 	public void readData() throws IOException{
 		
-		try{ //guarda el mensaje en una variable y lo muestra
-				
-			String message = (String) input.readObject();
-			System.out.println(message);
-	
-		}
-		catch (ClassNotFoundException classNotFoundException){
-				
-			System.out.println("Unknown object type received");
-		}
+		String message = input.readUTF();
+		System.out.println(message);
 	}
 }
