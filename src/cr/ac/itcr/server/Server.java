@@ -10,8 +10,8 @@ import java.io.IOException;
 
 
 public class Server {
-	String  armas="12";
-	String meritocracia="122";
+	String  armas="hola";
+	String meritocracia="h";
 	String  recursos="23";
 	
 	FileWriter archivoEscritura;// se crea el nombre  y  el  formato del archivo
@@ -35,10 +35,11 @@ public class Server {
 	
 	public  String   insertar(){
 		String salida="";
+		String er ="";
 		try{
+		for( int i=0;i<=500; i++){
 		
-		
-		String e= ""+ armas +"*"+ meritocracia+"+"+ recursos;
+	 er  += ""+ armas +"*"+ meritocracia+"+"+ recursos+ "\n";
 		
 				// se realizan las  asignaciones de  los objetos 
 	
@@ -48,14 +49,14 @@ public class Server {
 		
 		datoQueSeAlmacena= new PrintWriter(buferEscritura);
 		
-		datoQueSeAlmacena.println(e);
+		datoQueSeAlmacena.println(er);
 		
 		datoQueSeAlmacena.flush();
 		
 		salida="se inserto  e el  archivo  ";
 			   
 		}   
-			   
+		}	   
 	
 	catch(IOException e){salida= "error  al insertar"; 
 	}
