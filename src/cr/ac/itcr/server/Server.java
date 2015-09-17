@@ -56,9 +56,16 @@ public class Server {
 	}
 		
 	return  salida;
-	}	   
-			 
 	}
+	public  String consultarArchivo(){
+		String  salida="";
+		String  temporal="";
+		
+	
+	return "";
+	}
+			 
+	
 	public void runServer(){
 		
 		try{ //configura el servidor para recibir conexiones; procesa conexiones
