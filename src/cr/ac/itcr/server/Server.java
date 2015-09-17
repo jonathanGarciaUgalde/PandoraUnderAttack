@@ -1,5 +1,5 @@
 package cr.ac.itcr.server;
-
+import  java .io.*;//  aqui  se importa  la libreria  donde   se va  a  formar los  archivos  txt
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.io.DataInputStream;
@@ -7,7 +7,15 @@ import java.io.DataOutputStream;
 import java.io.EOFException;
 import java.io.IOException;
 
+
+
 public class Server {
+	FileWriter archivoEscritura;// se crea el nombre  y  el  formato del archivo
+	BufferedWriter  buferEscritura;// asigna  ese  archivo  creado  a el bufer
+	PrintWriter   datoQueSeAlmacena;// escribe lo que  recibe  en el archivo
+	FileReader archivoParaLectura;//
+	BufferedReader buferParaLectura;//
+	
 	
 	private ServerSocket server;  //socket del servidor
 	private Socket connection; //conexión con cliente
@@ -16,6 +24,31 @@ public class Server {
 	private DataInputStream input; //input stream del cliente
 
 	//configuración y ejecución del servidor
+	
+	public  String   insertar(){
+		String salida="";
+		try{
+		
+		
+		String e="hola";
+		// se realizan las  asignaciones de  los objetos 
+		 archivoEscritura= new FileWriter("archivo.txt") ;
+			 buferEscritura = new BufferedWriter(archivoEscritura) ;
+			   datoQueSeAlmacena= new PrintWriter(buferEscritura);
+			   datoQueSeAlmacena.println(e);
+			   datoQueSeAlmacena.flush();
+			   salida="se inserto  e el  archivo  ";
+			   
+		}   
+			   
+	
+	catch(IOException e){salida= "error  al insertar"; 
+	}
+		
+	return  salida;
+	}	   
+			 
+	}
 	public void runServer(){
 		
 		try{ //configura el servidor para recibir conexiones; procesa conexiones
