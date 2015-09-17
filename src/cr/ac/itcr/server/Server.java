@@ -34,7 +34,7 @@ public class Server {
 		try{
 		
 		
-		String e="hola";
+		String e="hola vea como  se agrega ";
 		// se realizan las  asignaciones de  los objetos 
 	
 		archivoEscritura= new FileWriter("archivo.txt") ;
@@ -57,7 +57,10 @@ public class Server {
 		
 	return  salida;
 	}
-		
+ 	 public  static void  main(String arv[]){
+ 		 Server servidor= new Server();
+ 		  System.out.println(servidor.insertar());
+ 	 }	
 	
 	
 			 
