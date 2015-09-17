@@ -1,4 +1,19 @@
+/**
+ *    Esta clase  consiste  en    albergar   las varibles  que se utilizarán en los párametros para   crear las colillas de pago dr los empleados de la  Universidad Los Pinos,
+ * 
+ *
+ * @author Jonathan Garcia Ugalde
+ * @author Gustavo Hernadez Granera
+ * 
+ *@since 11/09/2015
+ * 
+ *@version  7.0
+ * 
+ * 
+ * */
+
 package cr.ac.itcr.server;
+//se importan  las diferentes  librerias necesarias  para el  funcionamiento
 import  java .io.*;//  aqui  se importa  la libreria  donde   se va  a  formar los  archivos  txt
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -10,18 +25,12 @@ import java.io.IOException;
 
 
 public class Server {
-	String  armas="hola";
-	String meritocracia="h";
-	String  recursos="23";
+	
 	
 	FileWriter archivoEscritura;// se crea el nombre  y  el  formato del archivo
-	
 	BufferedWriter  buferEscritura;// asigna  ese  archivo  creado  a el bufer
-	
 	PrintWriter   datoQueSeAlmacena;// escribe lo que  recibe  en el archivo
-	
 	FileReader archivoParaLectura;//
-	
 	BufferedReader buferParaLectura;//
 	
 	
@@ -33,13 +42,17 @@ public class Server {
 
 	//configuración y ejecución del servidor
 	
+	/**
+	 * @param 
+	 * @return 
+	*/
 	public  String   insertar(){
 		String salida="";
-		String er ="";
+		
 		try{
 		for( int i=0;i<=500; i++){
 		
-	 er  += ""+ armas +"*"+ meritocracia+"+"+ recursos+ "\n";
+
 		
 				// se realizan las  asignaciones de  los objetos 
 	
@@ -49,7 +62,7 @@ public class Server {
 		
 		datoQueSeAlmacena= new PrintWriter(buferEscritura);
 		
-		datoQueSeAlmacena.println(er);
+		datoQueSeAlmacena.println("aqui  es donde  se asignan los onbjetos  que  se van a compartir  con el cliente");
 		
 		datoQueSeAlmacena.flush();
 		
@@ -62,6 +75,11 @@ public class Server {
 	}
 		
 	return  salida;
+	
+	/**
+	 * El metodo  consulta es el encargado de mostrar  el objeto que se creó para el clan que solicitó algun requerimiento.
+	 * @return retorna    los objetos  que se  solicitaron  en el servidos  para   el cliente. 
+	*/
 	}
 	public String  consulta (){
 		
@@ -77,20 +95,24 @@ public class Server {
 			 
 		 }
 	}
-		  	catch(IOException e){salida="error al analizar los requerimientos";
+		  	catch(IOException e){salida="no se  puede mostrar  la información  del objeto  que se creó";
 		 }
+		 
 		 
 	return  salida;
 	}
 	
 	
-			 
+	/**
+	 *  runServer  :  es   el metodo  que  configura el  servidor para recibir  conexiones; procesa  conexiones 
+	 *  en este  metodo  es donde   se crea  el socket del servidor
+	*/
 	
 	public void runServer(){
 		
-		try{ //configura el servidor para recibir conexiones; procesa conexiones
+		try{ 
 			
-			server = new ServerSocket(8080); //crea un socket del servidor
+			server = new ServerSocket(8080); // aqui  se crea un socket del servidor
 				
 			try{
 					
@@ -109,10 +131,14 @@ public class Server {
 							closeConnection();
 						if (counter == 6) //cuando llega a 5 conexiones sale del while
 							break;	
-						//si no encuentra mensajes y hay menos de 5 conexiones
-						//vuelve a esperar por la conexión
-						//cuando encuentra otra conexión y la verifica vuelve a ejecutar
-						//el while para leer los mensajes que mandó el nuevo cliente
+						/**
+						 * si no encuentra mensajes y hay menos de 5 conexiones
+						 * vuelve a esperar por la conexión
+						 *cuando encuentra otra conexión y la verifica vuelve a ejecutar
+						 *el while para leer los mensajes que mandó el nuevo cliente
+						 * 
+						 */
+						
 						waitForConnection();
 						getStreams();
 						processConnection();
@@ -130,8 +156,13 @@ public class Server {
 		}
 		
 	}
+	/**
+	 * Metodo  que espera  que llegue  alguna conexión  y despliega la informacion de la conexión 
+	 * 
+	 * 
+	 * @throws IOException  si  ocurriera un error  se  activa  una  excepción
+	 */
 	
-	//espera a que llegue algna conexión y despliega información de la conexión
 	private void waitForConnection() throws IOException{
 		
 		System.out.println("Waiting for connection"); 
@@ -140,7 +171,15 @@ public class Server {
 		++counter;
 	}
 	
-	//abre las vías (streams) para enviar y recibir datos
+	
+	
+	
+	/**
+	 * El metodo getStremas  se encarga de abrir las vías (streams) para enviar y recibir datos
+	 
+	 * @throws IOException
+	 */
+	 
 	private void getStreams() throws IOException{
 		
 		//configura un output stream para objetos
@@ -153,8 +192,12 @@ public class Server {
 		
 		System.out.println("Got I/O streams");
 	}
+	/**
+	 * este  metodo se encarga de procesar  la conexión con el cliente 
+	 * 
+	 * @throws IOException
+	 */
 	
-	//procesa la conexión con el cliente
 	public void processConnection() throws IOException{
 		
 		String message = "Connection successful"; 
@@ -164,7 +207,12 @@ public class Server {
 		System.out.println(message);
 	}
 	
-	//cierra las vías de comunicación y el socket, termina el servidor
+	/**
+	 * 
+	 * 
+	 * Metodo encargado de cerrar las vías de comunicación y el socket, termina el servidor
+	 * @throws IOException
+	 */
 	public void closeConnection() throws IOException{
 		
 		System.out.println("Terminating connection");
@@ -181,7 +229,11 @@ public class Server {
 		}
 	}
 	
-	//envíar mensajes al cliente
+	/**
+	 * 
+	 *  Metodod que  envia   el mensaje  al cliente* @param message
+	 */
+	
 	public void sendData(String message){
 		
 		try{ //envía un objeto al cliente
@@ -195,10 +247,15 @@ public class Server {
 		}
 	}
 	
-	//leer mensaje del cliente
+	/**
+	 *  El server mediante  este método se encarga  de  leer el  mensaje del cliente
+	 * @throws IOException
+	 *
+	 */
 	public void readData() throws IOException{
 		
 		String message = input.readUTF();
 		System.out.println(message);
 	}
+
 }
