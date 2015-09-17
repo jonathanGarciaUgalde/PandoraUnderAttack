@@ -7,7 +7,7 @@ public class MainServer {
 	 */
 	public static void main(String[] args) {
 		Server servidor= new Server();
-		servidor.insertar();
+		System.out.println(servidor.insertar());
 		// TODO Auto-generated method stub
 
 	}
