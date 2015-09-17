@@ -34,7 +34,7 @@ public class Server {
 		try{
 		
 		
-		String e="hola vea como  se agrega nombre  del clan   meritocracia  armas ";
+		String e= "bfjfjnfnnfjffjffjffhola vea como  se agrega nombre  del clan   meritocracia  armas ";
 		// se realizan las  asignaciones de  los objetos 
 	
 		archivoEscritura= new FileWriter("archivo.txt") ;
