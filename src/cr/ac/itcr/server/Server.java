@@ -11,9 +11,13 @@ import java.io.IOException;
 
 public class Server {
 	FileWriter archivoEscritura;// se crea el nombre  y  el  formato del archivo
+	
 	BufferedWriter  buferEscritura;// asigna  ese  archivo  creado  a el bufer
+	
 	PrintWriter   datoQueSeAlmacena;// escribe lo que  recibe  en el archivo
+	
 	FileReader archivoParaLectura;//
+	
 	BufferedReader buferParaLectura;//
 	
 	
@@ -32,12 +36,18 @@ public class Server {
 		
 		String e="hola";
 		// se realizan las  asignaciones de  los objetos 
-		 archivoEscritura= new FileWriter("archivo.txt") ;
-			 buferEscritura = new BufferedWriter(archivoEscritura) ;
-			   datoQueSeAlmacena= new PrintWriter(buferEscritura);
-			   datoQueSeAlmacena.println(e);
-			   datoQueSeAlmacena.flush();
-			   salida="se inserto  e el  archivo  ";
+	
+		archivoEscritura= new FileWriter("archivo.txt") ;
+		
+		buferEscritura = new BufferedWriter(archivoEscritura) ;
+		
+		datoQueSeAlmacena= new PrintWriter(buferEscritura);
+		
+		datoQueSeAlmacena.println(e);
+		
+		datoQueSeAlmacena.flush();
+		
+		salida="se inserto  e el  archivo  ";
 			   
 		}   
 			   
