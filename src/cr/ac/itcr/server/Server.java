@@ -81,12 +81,6 @@ public class Server {
 		 
 	return  salida;
 	}
- 	 public  static void  main(String arv[]){
- 		 Server servidor= new Server();
- 		  System.out.println(servidor.insertar());
- 		  System.out.println(servidor.consulta());
- 	
- 	 }	
 	
 	
 			 

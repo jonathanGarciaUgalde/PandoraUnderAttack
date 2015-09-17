@@ -8,7 +8,11 @@ public class MainServer {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		Server servidor= new Server();
-		System.out.println(servidor.insertar());}
+	 	 	 		 Server servidor= new Server();
+	 		  System.out.println(servidor.insertar());
+	 		  System.out.println(servidor.consulta());
+	 	
+	 	 	
+}
 
 }
