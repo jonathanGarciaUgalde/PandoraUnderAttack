@@ -10,6 +10,10 @@ import java.io.IOException;
 
 
 public class Server {
+	String  armas="12";
+	String meritocracia="122";
+	String  recursos="23";
+	
 	FileWriter archivoEscritura;// se crea el nombre  y  el  formato del archivo
 	
 	BufferedWriter  buferEscritura;// asigna  ese  archivo  creado  a el bufer
@@ -34,8 +38,9 @@ public class Server {
 		try{
 		
 		
-		String e= "bfjfjnfnnfjffjffjffhola vea como  se agrega nombre  del clan   meritocracia  armas ";
-		// se realizan las  asignaciones de  los objetos 
+		String e= ""+ armas +"*"+ meritocracia+"+"+ recursos;
+		
+				// se realizan las  asignaciones de  los objetos 
 	
 		archivoEscritura= new FileWriter("archivo.txt") ;
 		
