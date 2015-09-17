@@ -34,7 +34,7 @@ public class Server {
 		try{
 		
 		
-		String e="hola vea como  se agrega ";
+		String e="hola vea como  se agrega nombre  del clan   meritocracia  armas ";
 		// se realizan las  asignaciones de  los objetos 
 	
 		archivoEscritura= new FileWriter("archivo.txt") ;
@@ -57,9 +57,30 @@ public class Server {
 		
 	return  salida;
 	}
+	public String  consulta (){
+		
+		String  salida=" ";
+		String  temporal="";
+		 try{
+			 archivoParaLectura= new  FileReader ("archivo.txt");
+			 buferParaLectura= new  BufferedReader(archivoParaLectura);
+			 
+		
+		 while ((temporal=buferParaLectura.readLine())!=null ){
+			 salida+=temporal+"\n";
+			 
+		 }
+	}
+		  	catch(IOException e){salida="error al analizar los requerimientos";
+		 }
+		 
+	return  salida;
+	}
  	 public  static void  main(String arv[]){
  		 Server servidor= new Server();
  		  System.out.println(servidor.insertar());
+ 		  System.out.println(servidor.consulta());
+ 	
  	 }	
 	
 	
