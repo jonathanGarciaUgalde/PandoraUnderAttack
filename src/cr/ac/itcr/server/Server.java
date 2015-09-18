@@ -43,28 +43,35 @@ public class Server {
 	//configuración y ejecución del servidor
 	
 	/**
-	 * @param 
-	 * @return 
+	 * Metodo  que  se encarga de insetar un objeto, con los requerimientos que solicita el ciente del clan.
+	 *  
+	 *  
 	*/
 	public  String   insertar(){
 		String salida="";
 		
 		try{
+			archivoEscritura= new FileWriter("archivo.txt") ;
+			
+			buferEscritura = new BufferedWriter(archivoEscritura) ;
+			
+			datoQueSeAlmacena= new PrintWriter(buferEscritura);
+			archivoEscritura= new FileWriter("archivo.txt") ;
+			
+			buferEscritura = new BufferedWriter(archivoEscritura) ;
+			
+			datoQueSeAlmacena= new PrintWriter(buferEscritura);
+			
+			
 		for( int i=0;i<=500; i++){
 		
 
 		
 				// se realizan las  asignaciones de  los objetos 
 	
-		archivoEscritura= new FileWriter("archivo.txt") ;
+			
+		datoQueSeAlmacena.println("ejemplo de  impresion  para ver que se almacena ");
 		
-		buferEscritura = new BufferedWriter(archivoEscritura) ;
-		
-		datoQueSeAlmacena= new PrintWriter(buferEscritura);
-		
-		datoQueSeAlmacena.println("aqui  es donde  se asignan los onbjetos  que  se van a compartir  con el cliente");
-		
-		datoQueSeAlmacena.flush();
 		
 		salida="se inserto  e el  archivo  ";
 			   
