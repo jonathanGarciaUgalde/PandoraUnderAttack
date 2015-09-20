@@ -2,6 +2,7 @@ package cr.ac.itcr.almacenamiento;
 
 public class ListaDoble {
 	private NodoDoble inicio,fin;
+
 	public ListaDoble(){
 		inicio=fin=null;
 	}
@@ -29,34 +30,34 @@ public class ListaDoble {
 				inicio=fin=new NodoDoble(ele);
 			}
 		}
+	
+	
 	// Método para mostrar la lista de Inicio a Fin
-	public void mostrarInicioFin(){
+	public String mostrarInicioFin(){
+		String datos="<=>";
 		if(!estaVacia()){
-			String datos="<=>";
 			NodoDoble auxiliar = inicio;
 			while (auxiliar!=null){
 				datos = datos + "{"+auxiliar.dato+"}"+"<=>";
 				auxiliar=auxiliar.siguiente;
 				
-			}
-			System.out.print(datos);
-				
+			}	
 		}
+		return datos;
 	}
 	
 	//Método para mostrar la lista de Fin a Inicio
-	public void mostrarFinInicio(){
+	public String mostrarFinInicio(){
+		String datos="<=>";
 		if(!estaVacia()){
-			String datos="<=>";
 			NodoDoble auxiliar = fin;
 			while (auxiliar!=null){
 				datos = datos + "{"+auxiliar.dato+"}"+"<=>";
 				auxiliar=auxiliar.anterior;
 				
-			}
-			System.out.print(datos);
-				
+			}		
 		}
+		return datos;
 	}
 	
 	//Método para buscar un elemento
@@ -103,5 +104,8 @@ public class ListaDoble {
 
 		
 	}
+	
+
 }
+
 
