@@ -1,9 +1,12 @@
 package cr.ac.itcr.almacenamiento;
 
 import java.util.Scanner;
+
+import org.json.JSONArray;
+import org.json.JSONException;
 public class ConstruyeJSON {
 
-	public static void main (String [] args){
+	public static void main (String [] args) throws JSONException{
 	
 	//Pruebas con el JSON
 	Scanner input = new Scanner(System.in);
@@ -15,18 +18,15 @@ public class ConstruyeJSON {
 	//Se crea un objeto JSON y se le agregan elementos
 	FabJSON json =new FabJSON();
 	json.addElement(cabecera,name);
+	JSONArray LJSON = new JSONArray();
+	LJSON.put(0, 23243243);
+	LJSON.put(1, 34343);
+	json.addArray("array", LJSON);
+	JSONArray array  = json.getArray("array");
+	System.out.print(array);
+
 	
-	//Aqui se enlista el JSON anteriormente creado
-	ListaDoble lista=json.addJsonList();
-	
-	//Aqui se crea un nuevo JSON
-	FabJSON recursos=new FabJSON();
-	System.out.print("\nEnter cabecera");
-	String encabezado = input.nextLine();
-	
-	//Que va a contener a la lista que contiene al JSON
-	recursos.addListJson(encabezado, lista);
-	//Por ahora sale en strings pero ya veré como lo soluciono
+
 
 
 	

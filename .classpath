@@ -2,6 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Users/Tavo Hernández G/Google Drive/TEC/II Semestre/Algoritmos y Estructuras de Datos I/Proyectos/PandoraUnderAttack/java-json.jar"/>
+	<classpathentry kind="lib" path="D:/Documentos Dylan/Downloads/java-json.jar/java-json.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

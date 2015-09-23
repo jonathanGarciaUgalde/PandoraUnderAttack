@@ -95,7 +95,7 @@ public class ListaDoble {
 			if (buscado==inicio){
 				inicio=inicio.siguiente;
 				inicio.anterior=null;
-			}else{
+			}if (buscado==fin){
 				fin=fin.anterior;
 				fin.siguiente=null;
 				
