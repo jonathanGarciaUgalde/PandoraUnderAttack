@@ -1,5 +1,8 @@
 package cr.ac.itcr.almacenamiento;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+
 public class ListaDoble {
 	private NodoDoble inicio,fin;
 
@@ -105,6 +108,20 @@ public class ListaDoble {
 		
 	}
 	
+	public ListaDoble enlistar_Array(JSONArray arrayString, JSONArray arrayNumeral ) throws JSONException{
+		ListaDoble lista_array = new ListaDoble();
+		if (arrayString == null && arrayNumeral!=null){
+			for(int i=0; i < arrayNumeral.length(); i++){
+				String dato = String.valueOf(arrayNumeral.getInt(i));
+				lista_array.agregarInicio(dato);	
+		}
+		}if(arrayString!= null && arrayNumeral==null){
+			for(int i=0; i < arrayString.length(); i++){
+				lista_array.agregarInicio(arrayString.getString(i));
+		}
+		}
+		return lista_array;
+	}
 
 }
 

@@ -8,22 +8,28 @@ public class ConstruyeJSON {
 
 	public static void main (String [] args) throws JSONException{
 	
-	//Pruebas con el JSON
-	Scanner input = new Scanner(System.in);
-	System.out.print("Enter cabecera");
-	String cabecera = input.nextLine();
-	System.out.print("Enter element");
-	String name = input.nextLine();
+//	//Pruebas con el JSON
+//	Scanner input = new Scanner(System.in);
+//	System.out.print("Enter cabecera");
+//	String cabecera = input.nextLine();
+//	System.out.print("Enter element");
+//	String name = input.nextLine();
+//	
+//	//Se crea un objeto JSON y se le agregan elementos
+//	FabJSON json =new FabJSON();
+//	json.addElement(cabecera,name);
+	JSONArray array = new JSONArray();
+	array.put("Hola");
+	array.put("rayos");
+//	json.addArray("array", array);
+	int tamaño= array.length();
+//	JSONArray array2  = json.getArray("array");
+//	System.out.print(array2);
+	ListaDoble lista = new ListaDoble();
 	
-	//Se crea un objeto JSON y se le agregan elementos
-	FabJSON json =new FabJSON();
-	json.addElement(cabecera,name);
-	JSONArray LJSON = new JSONArray();
-	LJSON.put(0, 23243243);
-	LJSON.put(1, 34343);
-	json.addArray("array", LJSON);
-	JSONArray array  = json.getArray("array");
-	System.out.print(array);
+	// Aqui pasa todos los elementos de un array a una lista
+	ListaDoble recibe=lista.enlistar_Array(array,null); 
+	System.out.print(recibe.mostrarInicioFin());
 
 	
 
