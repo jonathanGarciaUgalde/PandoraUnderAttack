@@ -1,3 +1,16 @@
+/**
+ * Esta es  la clase  encarga de  de  levantar el servidor 
+ *  implementar  los hilos
+ *  
+ *  
+ *  @author Jonathan Garcia Ugalde
+ * @author Gustavo Hernadez Granera
+ * 
+ *@since 11/09/2015
+ * 
+ *@version  7.0
+ *
+ */
 package cr.ac.itcr.severthreads;
 
 import java.io.*;
