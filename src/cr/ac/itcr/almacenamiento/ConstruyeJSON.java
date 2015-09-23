@@ -1,3 +1,19 @@
+/**
+ *    Esta clase  consiste  en    contruir  y darle formato de tipo JSON  que se utilizará  para que  se le envien los datos  al cliente.
+ *    esta  clase se  comunica con la clase de lista doblemente  enlazada  para asignar los elemento en formato JSON  que   se crearon. 
+ * 
+ *
+ * @author Dilan Castro Enriquez
+ *
+ * 
+ *@since 11/09/2015
+ * 
+ *@version  7.0
+ * 
+ * 
+ * */
+
+
 package cr.ac.itcr.almacenamiento;
 
 import java.util.Scanner;
@@ -58,7 +74,11 @@ public class ConstruyeJSON {
 	
 	
 	
-	
+/**
+ * Agrega  elementos a la lista doblemente  enlaza mediante una estructura de   control llamada switch
+ * 
+ * 
+ */
 	
 //	ListaDoble listita = new ListaDoble();
 //	int opcion=0;
