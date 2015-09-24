@@ -1,32 +1,55 @@
+/**
+ *Esta  es la clase  que se encarga de  crear   la lista doblemente enlazada, con sus metodos respectivos.
+ *     
+ * @author Dilan  castro Enriquez
+ *@since 11/09/2015
+ * 
+ *@version  7.0
+ * 
+ * 
+ * */
+
 package cr.ac.itcr.almacenamiento;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 
 public class ListaDoble {
+	// se  declara  un nodo inicial de la lista  y uno final.
 	private NodoDoble inicio,fin;
 
 	public ListaDoble(){
+		// le asigna por  defecto a los  nodos  creados  que apunteen a null
 		inicio=fin=null;
 	}
 	
-	//Método para saber cuando la lista está vacía
+	/**
+	 * metodo  que  analiza si la lista  esta  vacia,
+	 * @return retorna  un  tipo de dato boolean   
+	 * 
+	 */
 	public boolean estaVacia(){
 		return inicio==null;
 	}
 
-	//Método para agregar nodos al final
+	/**
+	 * agregarFinal es   un  metodo  se  encarga  de   agregar  un elemto al final de  la lista.
+	 * 
+	 */
 	public void agregarFinal(String ele){
 		if (!estaVacia()){
-			fin= new NodoDoble(ele, null, fin);
+			fin= new NodoDoble(ele, null, fin);// se hace  una instancia creando un nodo  al final de la lista. 
 			fin.anterior.siguiente=fin;
 			}else{
 				inicio=fin=new NodoDoble(ele);
 			}
 		}
-	//Método para agregar nodos al inicio
+	/**
+	 * agregarInicio es un metodo cua función es agregar un elemento al inicio de  la lista 
+	 *  
+	 */
 	public void agregarInicio(String ele){
-		if (!estaVacia()){
+		if (!estaVacia()){//verifica que la lista no esté vacía 
 			inicio=new NodoDoble(ele, inicio, null);
 			inicio.siguiente.anterior= inicio;
 			}else{
@@ -35,7 +58,10 @@ public class ListaDoble {
 		}
 	
 	
-	// Método para mostrar la lista de Inicio a Fin
+	/**
+	 *  este  Método esta  encargado de mostrar todos  los elemento que tiene  la  lista desde  su inicio hasta el final de la misma 
+	 * @return retorna  la lista entera de inicio  a fin 
+	 */
 	public String mostrarInicioFin(){
 		String datos="<=>";
 		if(!estaVacia()){
@@ -49,7 +75,10 @@ public class ListaDoble {
 		return datos;
 	}
 	
-	//Método para mostrar la lista de Fin a Inicio
+	/**
+	 * este metodo  tiene  la funcion  de  mostrar  todos los elementos de la  lista de  una  forma  inversa    
+	 * @return retorna  in String  con los elentos de la lista 
+	 */
 	public String mostrarFinInicio(){
 		String datos="<=>";
 		if(!estaVacia()){
@@ -63,7 +92,11 @@ public class ListaDoble {
 		return datos;
 	}
 	
-	//Método para buscar un elemento
+	/**
+	 *  la fun del Método  buscar  es tratar de encontrar en la lista el elemento que se desea encontrar
+	 *  
+	 * @return  si  se encuentra el  elemento se  retorna con un tipo de dato String 
+	 */
 	public String buscar(String dato) {
 		NodoDoble buscado = null; 
 		NodoDoble iterador = inicio;
@@ -77,7 +110,10 @@ public class ListaDoble {
 	} 
 	
 
-	//Método para borrar
+	/**
+	 *  la funcion de este metodo es borrar todos  los elementos de la lista y dejarla  vacia  para  volverla a utilizar.
+	 *
+	 */
 	public void borrar(String dato){
 		NodoDoble buscado = null; 
 		NodoDoble iterador = inicio;
@@ -107,6 +143,14 @@ public class ListaDoble {
 
 		
 	}
+	
+	/**
+	 * metodo   se encarga de  asignar todos  los elemetos  de  los arreblos    JSONArray arrayString, JSONArray arrayNumeral   y asignarlos a una lista doblemente  enlazada   
+	 * @return retorna una lista  enlazada de tipo String
+	 * 
+	 * @throws si  ocurre  algun tipo de error se  dispará  una excepción 
+	 * 
+	 */
 	
 	public ListaDoble enlistar_Array(JSONArray arrayString, JSONArray arrayNumeral ) throws JSONException{
 		ListaDoble lista_array = new ListaDoble();

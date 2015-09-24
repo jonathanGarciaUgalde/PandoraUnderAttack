@@ -1,6 +1,5 @@
 /**
- *    Esta clase  consiste  en    albergar   las varibles  que se utilizarán en los párametros para   crear las colillas de pago dr los empleados de la  Universidad Los Pinos,
- * 
+ *    En esta clase se llevará  acabo la  cracion el servidor para  la  comunicación con  el cliente y el envio de datos  segun la  solicitud y  segun el rango y  losa  recursos  que tenga  el solicitante
  *
  * @author Jonathan Garcia Ugalde
  * @author Gustavo Hernadez Granera

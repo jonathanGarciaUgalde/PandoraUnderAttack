@@ -1,3 +1,16 @@
+ /**
+  *  Esta   es la  clase encargada de  crear un hilo   para que se puedan conectar multiples  y este extiende  del hilo de conexion 
+  *  clientes al servidor
+  *  
+  *  
+  * @author Jonathan Garcia Ugalde
+  * @author Gustavo Hernadez Granera
+
+  *@since 11/09/2015
+  * 
+  *@version  7.0
+  */
+
 package cr.ac.itcr.severthreads;
 
 import java.io.*;
@@ -12,6 +25,7 @@ public class ServidorHilo extends Thread {
     private DataInputStream dis;
     private int idSessio;
     
+    //constructor  que inicializar el socket y asigna  el id al numero de sesión 
     public ServidorHilo(Socket socket, int id) {
         this.socket = socket;
         this.idSessio = id;
@@ -22,6 +36,11 @@ public class ServidorHilo extends Thread {
             Logger.getLogger(ServidorHilo.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    /**
+     * metodo que se   encarga de  cerrar todas las  conexiones  que se  realizaron en el socket  
+     * 
+     * 
+     */
     public void desconnectar() {
         try {
             socket.close();
@@ -29,6 +48,12 @@ public class ServidorHilo extends Thread {
             Logger.getLogger(ServidorHilo.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    /**
+     * el metodo  run  mediante  el override sobresccribe la acción
+     * y  hace la asignacion al  archivo y   se lo envia al cliente que hizo esa  solicitud  
+     
+     */
     @Override
     public void run() {
         String msg;
@@ -56,6 +81,8 @@ public class ServidorHilo extends Thread {
         //}
         //desconnectar();
     //}
+    
+    
     
     public void leer(){
     	String texto =""; 
