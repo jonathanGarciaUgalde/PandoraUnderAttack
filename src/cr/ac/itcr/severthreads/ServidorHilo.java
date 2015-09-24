@@ -1,6 +1,8 @@
 package cr.ac.itcr.severthreads;
 
 import java.io.*;
+import org.json.*;
+
 import java.net.*;
 import java.util.logging.*;
 
@@ -29,18 +31,20 @@ public class ServidorHilo extends Thread {
     }
     @Override
     public void run() {
-        String accion = "";
+        String msg;
+        File archivo = new File("texto.txt");
+    	JSONObject json = new JSONObject();
         while (true){
         	try{
-	            accion = dis.readUTF();
-		        if(accion!=null){
-		            File archivo = new File("texto.txt");
-		    		FileWriter escribir = new FileWriter(archivo,true);
-		    		escribir.write(accion+" ");
-		   			escribir.close();
-		            System.out.println("Cliente #"+this.idSessio+" >>> "+accion);
+	            msg = dis.readUTF();
+		        if(msg!=null){
+		        	json.put("Mensaje",msg);
+		    		FileWriter escribir = new FileWriter(archivo);
+		    		escribir.write(json.toString()+" ");
+		            System.out.println("Cliente #"+this.idSessio+" >>> "+msg);
 		            dos.writeUTF("Mensaje recibido"); 
-		            leer();
+		   			escribir.close();
+		   			leer();
 	                }
         	}
 	       	catch(Exception e){
