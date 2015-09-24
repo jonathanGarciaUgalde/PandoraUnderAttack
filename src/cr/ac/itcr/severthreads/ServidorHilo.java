@@ -55,20 +55,20 @@ public class ServidorHilo extends Thread {
      
      */
     @Override
-    public void run() {
-        String msg;
-        File archivo = new File("texto.txt");
-    	JSONObject json = new JSONObject();
-        while (true){
+    public void run() { //corre el servidor
+        String msg; 
+        File archivo = new File("texto.txt"); //crea el archivo .txt
+    	JSONObject json = new JSONObject(); //crea un nuevo objeto de la clase JSONObject
+        while (true){ //ciclo infinito
         	try{
-	            msg = dis.readUTF();
-		        if(msg!=null){
-		        	json.put("Mensaje",msg);
-		    		FileWriter escribir = new FileWriter(archivo);
-		    		escribir.write(json.toString()+" ");
+	            msg = dis.readUTF(); //asigna a una variable lo que el cliente envía
+		        if(msg!=null){ //condición de si el "buzón" de mensajes de entrada está vacío entonces...
+		        	json.put("Mensaje",msg); //asigna al objetivo JSON dos datos
+		    		FileWriter escribir = new FileWriter(archivo); //crea un objeto escribe en archivo creado 
+		    		escribir.write(json.toString()+" "); //escribe el objeto JSON en el archivo como string
 		            System.out.println("Cliente #"+this.idSessio+" >>> "+msg);
-		            dos.writeUTF("Mensaje recibido"); 
-		   			escribir.close();
+		            dos.writeUTF("Mensaje recibido"); //envía al cliente un mensaje de recibido
+		   			escribir.close(); //cierra el escritor del archivo
 		   			leer();
 	                }
         	}
