@@ -11,8 +11,8 @@
 
 package cr.ac.itcr.almacenamiento;
 
+import org.json.*;
 import org.json.JSONArray;
-import org.json.JSONException;
 
 public class ListaDoble {
 	// se  declara  un nodo inicial de la lista  y uno final.

@@ -14,7 +14,7 @@
 package cr.ac.itcr.severthreads;
 
 import java.io.*;
-import org.json.*;
+import org.json.simple.*;
 
 import java.net.*;
 import java.util.logging.*;
