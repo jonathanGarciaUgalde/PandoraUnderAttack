@@ -2,7 +2,7 @@
  * clase   que  se encarga de  getionar  los  datos de tipo JSON  y   hace inserciones y obtenciones de estos  tipos de datos que han sido  creados.
  * 
  *     
- * @author Dilan  castro Enriquez
+ * @author Dilan  Castro Enriquez
  *@since 11/09/2015
  * 
  *@version  7.0
