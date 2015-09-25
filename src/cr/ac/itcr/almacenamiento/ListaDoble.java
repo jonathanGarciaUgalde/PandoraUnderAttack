@@ -19,7 +19,7 @@ public class ListaDoble {
 	private NodoDoble inicio,fin;
 
 	public ListaDoble(){
-		// le asigna por  defecto a los  nodos  creados  que apunteen a null
+		// le asigna por  defecto a los  nodos  creados  que apunteen a null.
 		inicio=fin=null;
 	}
 	
