@@ -24,7 +24,7 @@ public class ListaDoble {
 	}
 	
 	/**
-	 * metodo  que  analiza si la lista  esta  vacia,
+	 * método  que  analiza si la lista  esta  vacia,
 	 * @return retorna  un  tipo de dato boolean   
 	 * 
 	 */
@@ -33,7 +33,7 @@ public class ListaDoble {
 	}
 
 	/**
-	 * agregarFinal es   un  metodo  se  encarga  de   agregar  un elemto al final de  la lista.
+	 * agregarFinal es   un  metodo  se  encarga  de   agregar  un elemento al final de  la lista.
 	 * 
 	 */
 	public void agregarFinal(String ele){
@@ -45,7 +45,7 @@ public class ListaDoble {
 			}
 		}
 	/**
-	 * agregarInicio es un metodo cua función es agregar un elemento al inicio de  la lista 
+	 * agregarInicio es un metodo cuya función es agregar un elemento al inicio de  la lista 
 	 *  
 	 */
 	public void agregarInicio(String ele){
@@ -59,7 +59,7 @@ public class ListaDoble {
 	
 	
 	/**
-	 *  este  Método esta  encargado de mostrar todos  los elemento que tiene  la  lista desde  su inicio hasta el final de la misma 
+	 *  este  Método esta  encargado de mostrar todos  los elementos que tiene  la  lista desde  su inicio hasta el final de la misma 
 	 * @return retorna  la lista entera de inicio  a fin 
 	 */
 	public String mostrarInicioFin(){
@@ -77,7 +77,7 @@ public class ListaDoble {
 	
 	/**
 	 * este metodo  tiene  la funcion  de  mostrar  todos los elementos de la  lista de  una  forma  inversa    
-	 * @return retorna  in String  con los elentos de la lista 
+	 * @return retorna  un String  con los elementos de la lista 
 	 */
 	public String mostrarFinInicio(){
 		String datos="<=>";
@@ -111,7 +111,7 @@ public class ListaDoble {
 	
 
 	/**
-	 *  la funcion de este metodo es borrar todos  los elementos de la lista y dejarla  vacia  para  volverla a utilizar.
+	 *  la funcion de este método consiste en buscar un elemento en la lista y lo elimina
 	 *
 	 */
 	public void borrar(String dato){
@@ -145,8 +145,8 @@ public class ListaDoble {
 	}
 	
 	/**
-	 * metodo   se encarga de  asignar todos  los elemetos  de  los arreblos    JSONArray arrayString, JSONArray arrayNumeral   y asignarlos a una lista doblemente  enlazada   
-	 * @return retorna una lista  enlazada de tipo String
+	 * metodo   se encarga de  asignar todos  los elementos  de un arreglo (ya sea un arreglo numeral o String)   y asignarlos a una lista doblemente  enlazada   
+	 * @return retorna una lista  enlazada
 	 * 
 	 * @throws si  ocurre  algun tipo de error se  dispará  una excepción 
 	 * 
