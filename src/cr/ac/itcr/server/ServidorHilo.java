@@ -64,6 +64,7 @@ public class ServidorHilo extends Thread {
 	            msg = dis.readUTF();
 		        if(msg!=null){
 		        	System.out.println("Cliente #"+this.idSessio+" >>> "+msg);
+		        	dos.writeUTF("Mensaje recibido");
 		        	if (msg.equals("Registrarse")){
 		        		registrarUsuario();	
 		        	}
