@@ -11,7 +11,7 @@
  *@version  7.0
  *
  */
-package cr.ac.itcr.severthreads;
+package cr.ac.itcr.server;
 
 import java.io.*;
 import java.net.*;
